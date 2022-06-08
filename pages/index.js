@@ -34,11 +34,13 @@ const db = getFirestore(app);
 
 export default function Home() {
   const [bribe, setBribe] = useState("");
+  const [myBribe, setMyBribe] = useState(0);
 
-  const addData = async (myBribe) => {
+  const addData = async () => {
+    const totalBribe = parseInt(bribe) + parseInt(myBribe);
     try {
       await setDoc(doc(db, "data", "start"), {
-        bribe: bribe + myBribe,
+        bribe: totalBribe,
       });
       console.log("Document written with ID: ");
     } catch (e) {
@@ -88,10 +90,10 @@ export default function Home() {
           size="lg"
           placeholder="Kitna Paisa Diya ₹ "
           type="number"
-          onChange={(e) => setBribe(e.target.value)}
+          onChange={(e) => setMyBribe(e.target.value)}
         />
         <Spacer />
-        <Button size="lg" variant="primary" onPress={(e) => addData(bribe)}>
+        <Button size="lg" variant="primary" onPress={(e) => addData()}>
           I have been bribed !!
         </Button>
       </main>
