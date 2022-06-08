@@ -38,7 +38,7 @@ export default function Home() {
   const addData = async (myBribe) => {
     try {
       await setDoc(doc(db, "data", "start"), {
-        bribe: Int8Array(bribe) + Int8Array(myBribe),
+        bribe: bribe + myBribe,
       });
       console.log("Document written with ID: ");
     } catch (e) {
@@ -49,7 +49,6 @@ export default function Home() {
   const getData = async () => {
     try {
       const docRef = onSnapshot(doc(db, "data", "start"), (doc) => {
-        console.log(doc.data());
         setBribe(doc.data().bribe);
       });
     } catch (e) {
@@ -58,7 +57,7 @@ export default function Home() {
   };
   useEffect(() => {
     getData();
-  }, [bribe]);
+  }, []);
 
   return (
     <div className={styles.container}>
