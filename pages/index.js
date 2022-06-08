@@ -38,7 +38,7 @@ export default function Home() {
   const addData = async (myBribe) => {
     try {
       await setDoc(doc(db, "data", "start"), {
-        bribe: bribe + myBribe,
+        bribe: Int8Array(bribe) + Int8Array(myBribe),
       });
       console.log("Document written with ID: ");
     } catch (e) {
