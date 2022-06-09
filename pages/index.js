@@ -77,10 +77,7 @@ export default function Home() {
             <Button
               onClick={() => {
                 navigator.clipboard.writeText(`
-                I paid bribe. Let's find out how much bribe does india pays.
-                https://bribr.app/
-                
-                `);
+                I paid bribe. Let's find out how much bribe does india pays. https://bribr.vercel.app/ .Currently the total bribe is ₹${bribe}}`);
                 setCopy(true);
               }}
             >
