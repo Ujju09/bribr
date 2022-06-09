@@ -8,6 +8,7 @@ export default function DepartmentDropDown() {
     "State Electricity Board",
     "Municipal Corporation",
     "Driving licence office",
+    "Railways",
   ];
 
   const [dept, setDept] = useState(govtDepartments[0]);
