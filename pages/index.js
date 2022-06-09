@@ -125,6 +125,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="image" href="/favicon-16x16.png" />
         <link rel="image" href="/favicon-32x32.png" />
+        <meta name="google" content="nositelinkssearchbox" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Bribe is a simple tool to find out how much bribe does india pays."
+        />
+        <meta
+          name="keywords"
+          content="bribe, india, indian, pay, how much, how much does india pay"
+        />
+        <meta name="author" content="Bribr" />
+        <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="language" content="en" />
       </Head>
       <main className={styles.main}>
         <label>Total Bribe Amount:</label>
